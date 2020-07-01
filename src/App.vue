@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <p>{{anime}}</p> -->
     <p>
       <img :src="dragonite.sprite" />
     </p>
@@ -20,31 +19,6 @@ export default {
     }
   },
   apollo: {
-    // anime: {
-    //   query: gql`query getMedia ($id: Int) {
-    //     Media (id: $id, type: ANIME) {
-    //       characters {
-    //         nodes {
-    //           name {
-    //             first
-    //             last
-    //           }
-    //         }
-    //       }
-    //       id
-    //       title {
-    //         english
-    //       }
-    //     }
-    //   }`,
-    //   loadingKey: "Tags loading...",
-    //   update: data => data.Media,
-    //   variables() {
-    //     return {
-    //       id: 8888 // variable example + how I did it with quotes database
-    //     }
-    //   }
-    // },
     // set paramters example
     dragonite: {
       query: gql`query{
