@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <p>
-      <img :src="dragonite.sprite" />
-    </p>
+    <p v-if="$apollo.queries.dragonite.loading">{{$apollo.queries.dragonite.loadingKey}}</p>
+    <img v-else :src="dragonite.sprite" />
     <p>{{bulbasaur}}</p>
   </div>
 </template>
@@ -12,12 +11,6 @@ import gql from 'graphql-tag'; // need
 
 export default {
   name: 'App',
-  data() {
-    return {
-      dragonite: [],
-      bulbasaur: []
-    }
-  },
   apollo: {
     // set paramters example
     dragonite: {
@@ -29,7 +22,7 @@ export default {
       loadingKey: "Loading dragonite...",
       update: data => data.getPokemonDetailsByName
     },
-    // using parameters with variables example
+    // reactive parameters example
     bulbasaur: {
       query: gql`query getPokemon($pokemon: String!){
         getDexEntries(pokemon: $pokemon) {
