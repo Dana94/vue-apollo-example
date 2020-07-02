@@ -9,7 +9,6 @@ Vue.use(VueApollo)
 Vue.config.productionTip = false
 
 const apolloClient = new ApolloClient({
-  // You should use an absolute URL here
   uri: 'https://graphqlpokemon.favware.tech/'
 })
 

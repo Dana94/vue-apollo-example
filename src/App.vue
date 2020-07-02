@@ -3,11 +3,14 @@
     <p v-if="$apollo.queries.dragonite.loading">{{$apollo.queries.dragonite.loadingKey}}</p>
     <img v-else :src="dragonite.sprite" />
     <p>{{bulbasaur}}</p>
+    <Search />
   </div>
 </template>
 
 <script>
 import gql from 'graphql-tag'; // need
+
+import Search from './components/Search.vue';
 
 export default {
   name: 'App',
@@ -38,6 +41,9 @@ export default {
         }
       }
     }
+  },
+  components: {
+    Search
   }
 }
 </script>
